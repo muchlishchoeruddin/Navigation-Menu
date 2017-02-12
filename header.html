@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+        *{
+          margin:0 auto;
+        }
+        body{
+          background-color: #eee;
+        }
+          .shape{
+            fill:transparent;
+            stroke-dasharray: 99;
+            stroke-dashoffset: 205;
+            stroke-width:8;
+            stroke: #19f6e8;
+          }
+          .redirect{
+            position: absolute;
+            padding:20px;
+          }
+          .redirect .shape{
+            -webkit-animation: 5s draw ease-in forwards;
+            animation-iteration-count: infinite;
+          }
+          @keyframes draw {
+            0%,100%{
+              stroke-dasharray: 99;/*99*/
+              stroke-dashoffset: 205;
+              stroke-width:6;
+            }
+            25%{
+              stroke-dasharray: 760;/*760*/
+              stroke-dashoffset: 0;
+              stroke-width: 2px;
+            }
+            50%{
+              stroke-dasharray: 10 100 10;/*120*/
+              stroke-width: 5.5px;
+            }
+            75%{
+              stroke-dasharray: 140 200;/*340*/
+              stroke-width: 3.5px;
+            }
+          }
+          #header{
+            height: 120px;
+            background-color: #333;
+          }
+          #navisi{
+            list-style: none;
+            font-size:25px;
+            color:white;
+            font-family:Constantia;
+            margin-top:120px;
+            width:100%;
+            display: none;
+            position:absolute;
+            float:right;
+            margin-right:100px;
+            margin-left: -40px;
+          }
+          #navisi li{
+            padding:20px;
+            background-color:#444;
+          }
+          #navisi li:hover{
+            background-color: #555;
+            cursor: pointer;
+          }
+          #nav .isi:hover{
+            background-color: #555;
+          }
+          #nav .navr:hover{
+            background-color: #555;
+          }
+          [type="checkbox"]{
+            float:right;
+          }
+          #boom{
+            width: 50px;
+            height:50px;
+          }
+          [type="checkbox"]:checked ~ #navisi{
+            display:block;
+            z-index: 9999;
+            position: absolute;
+          }
+          [type="checkbox"]:checked ~ .koom {
+            animation-name: kool;
+            animation-duration: 0.5s;
+          }
+          @keyframes kool {
+            0%{
+              stroke-width:7;
+            }
+            100%{
+              stroke-width: 5;
+            }
+          }
+      		#boom {
+            display: none;
+          }
+          #boom{
+          	height: 100px;
+          	cursor: pointer;
+            display: block;
+            width: 100px;
+            display:none;
+          }
+          .boom{
+          	height: 50px;
+          	float:right;
+          	cursor: pointer;
+          	margin-top:35px;
+          	margin-right:40px;
+            display: block;
+            width: 40px;
+            background-color: white;
+            background: transparent;
+          }
+        </style>
+  </head>
+  <body>
+    <div id="header">
+      <svg class="redirect" width="320" height="60">
+        <rect class="shape" height="60" width="320" />
+        <polyline style="stroke:#aaa;stroke-width: 5;fill:transparent"
+        points="200 10, 160 10, 155 20, 155 40, 160 50, 200 50" />
+        <polyline style="stroke:#eee;stroke-width: 5;fill:transparent"
+        points="125 50 125 10, 130 10, 150 40, 170 10, 175 10, 175 50" />
+      </svg>
+      <span style="unselectable:on;-webkit-user-select:none;margin-top: 82px;margin-left: 20px;position:absolute; letter-spacing: 10px; color:white;">Muchlish Choeruddin</span>
+      <input type="checkbox" id="boom" /><label class="boom" for="boom"><svg width="40" height="50">
+      	<polyline class="koom" style="stroke:white; stroke-width:7px;fill:none;" points="0 10, 40 10," />
+      	<polyline class="koom" style="stroke:white; stroke-width:7px;fill:none;" points="0 25, 40 25," />
+      	<polyline class="koom" style="stroke:white; stroke-width:7px;fill:none;" points="0 40, 40 40," />
+      </svg></label>
+        <ul id="navisi">
+          <li style="unselectable:on;-webkit-user-select:none;">apd</li>
+          <li style="unselectable:on;-webkit-user-select:none;">apw</li>
+          <li style="unselectable:on;-webkit-user-select:none;">aps</li>
+          <li style="unselectable:on;-webkit-user-select:none;">apa</li>
+          <li style="unselectable:on;-webkit-user-select:none;">apq</li>
+        </ul>
+    </div>
+  </body>
+</html>
